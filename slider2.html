@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .slider-img{
+            width: 550px;
+        }
+        img{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="slider">
+        <img class="slider-img" src="../J.S/img/class img.png" alt="">
+        <img class="slider-img" src="../J.S/img/five bg.png" alt="">
+        <img class="slider-img" src="../J.S/img/four bg.png" alt="">
+        <img class="slider-img" src="../J.S/img/seven img.png" alt="">
+        <img class="slider-img" src="../J.S/img/yoga1.png" alt="">
+        <img class="slider-img" src="../J.S/img/yoga2.png" alt="">
+        <img class="slider-img" src="../J.S/img/yoga3.png" alt="">
+    </div>
+    
+    <script>
+        var sliderdata = document.getElementsByClassName("slider-img")
+        // console.log(sliderdata);
+        counter = 0
+
+        function slider(){
+            for(let index = 0; index < sliderdata.length; index++)
+            // console.log(slider);
+            sliderdata[index].style.display = "none"
+
+            if(counter >= sliderdata.length){
+                counter = 0
+            }
+            console.log(counter);
+            sliderdata[counter].style.display = "block"
+            counter++;
+
+            setTimeout(slider,1500)
+
+        }
+        slider()
+    </script>
+
+</body>
+</html>
